@@ -21,11 +21,18 @@ const { randItem,
 } = require("./lib/func_cointem")
 
 if(!dbSystem)console.log("Error not find dbSystem file".red);
+<<<<<<< HEAD
 async function checkingGlobalDB(){
     console.log(c.blueBright("\n📂 Checking global database..."))
     await dbSystem.createDBGlobal()
 }
 checkingGlobalDB()
+=======
+( async () => {
+    console.log(c.blueBright("\n📂 Checking global database..."))
+    await dbSystem.createDBGlobal()
+})()
+>>>>>>> e0287652c3d978f1316f472fde1500d270f4abd1
 
 Client.on("message", async (m) => {
     try {
@@ -61,6 +68,7 @@ function resetProfitDaily(){
     }
 }
 
+<<<<<<< HEAD
 function pajakHarian(){
     const all_user_data = dbSystem.getAllUser()
     const all_user_key = Object.keys(all_user_data)
@@ -74,6 +82,8 @@ function pajakHarian(){
     }
 }
 
+=======
+>>>>>>> e0287652c3d978f1316f472fde1500d270f4abd1
 setInterval( async() => {
     const now = moment().tz("Asia/Jakarta")
     const jam = now.format("HH")
@@ -92,8 +102,12 @@ setInterval( async() => {
     if(jam == "18" && menit == "01" && detik == "01") clearBotEffect("fast")
     
     if([menit, detik].every((k) => k === "00")) backup()
+<<<<<<< HEAD
     if(jam === "23" && menit === "50" && detik === "00"){
         pajakHarian()
         resetProfitDaily()
     }
+=======
+    if(jam === "23" && menit === "50" && detik === "00") resetProfitDaily()
+>>>>>>> e0287652c3d978f1316f472fde1500d270f4abd1
 }, 1000);

@@ -160,7 +160,11 @@ try {
                 if(totalProfit > dbSystem.getUserKey(qfc.clicker.id, "high_profit")) dbSystem.setUserKey(qfc.clicker.id, "high_profit", totalProfit)
                 dbSystem.setUserKey(qfc.clicker.id, "total_profit", totalProfit)
                 
+<<<<<<< HEAD
                 if(["perak", "emas", "platinum", "diamond"].includes(itemName[1])) sellVolume(itemName[1], jumlah)
+=======
+                if(["perak", "emas", "platinum", "diamond"].includes(itemName[1])) buyVolume(itemName[1], jumlah)
+>>>>>>> e0287652c3d978f1316f472fde1500d270f4abd1
                 dbSystem.addUserKey(qfc.clicker.id, itemName[1], -jumlah)
                 dbSystem.addUserKey(qfc.clicker.id, "uang", totalHarga)
                 dbSystem.addUserKey(qfc.clicker.id, "jumlah_trading", 1)
@@ -376,12 +380,15 @@ try {
             function takeProfitDaily(data){ return data.total_profit}
             function takeProfitHigh(data) { return data.high_profit }
             
+<<<<<<< HEAD
             //pekerjaan
             function takePekerjaan(data){ return data.pekerjaan.pengalaman }
             function detailKerja(data){
                 return `pekerjaan: ${data.pekerjaan.pekerjaan}\n=> Pengalaman: ${formatNumber(data.pekerjaan.pengalaman)} `
             }
             
+=======
+>>>>>>> e0287652c3d978f1316f472fde1500d270f4abd1
             const urutan = allUser.sort((a, b) => {
                 let totalA, totalB
                 
@@ -392,7 +399,10 @@ try {
                     case "points": {totalA = takePoints(a); totalB = takePoints(b)} break
                     case "profit_daily": {totalA = takeProfitDaily(a); totalB = takeProfitDaily(b)} break
                     case "profit_high": {totalA = takeProfitHigh(a); totalB = takeProfitHigh(b)} break
+<<<<<<< HEAD
                     case "pekerjaan": { totalA = takePekerjaan(a); totalB = takePekerjaan(b)} break
+=======
+>>>>>>> e0287652c3d978f1316f472fde1500d270f4abd1
                 }
                 return totalB - totalA
             })
@@ -408,12 +418,20 @@ try {
                     case "points": {totalAset = takePoints(a)} break
                     case "profit_daily": {totalAset = takeProfitDaily(a)} break
                     case "profit_high": {totalAset = takeProfitHigh(a)} break
+<<<<<<< HEAD
                     case "pekerjaan": { totalAset = detailKerja(a) } break
                 }
                 
                 return `${i+1}. ${a.nama}\n=> ${formatNumber(totalAset) || totalAset}`
             }).join("\n\n")
             let teks = `🏆 ==== ${args[0].split("_").join(" ")} ==== 🏆`
+=======
+                }
+                
+                return `${i+1}. ${a.nama}\n=> ${formatNumber(totalAset)}`
+            }).join("\n\n")
+            let teks = `🏆 ==== ${args[0]} ==== 🏆`
+>>>>>>> e0287652c3d978f1316f472fde1500d270f4abd1
                 teks+= "\n\n"+toTex
             if(args[0].startsWith("ter")) teks+= "\n\nnoted: jumlah diatas merupakan perhitungan leaderboard dari akhir season (merupakan top sultan/trader)"
                 
