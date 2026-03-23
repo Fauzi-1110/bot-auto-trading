@@ -1,0 +1,23 @@
+{
+  "name": "bot-trading",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "a"
+  ],
+  "license": "ISC",
+  "author": "Pak Uzi",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "colors": "^1.4.0",
+    "moment-timezone": "^0.6.0",
+    "node-telegram-bot-api": "^0.67.0",
+    "uzi_telegram-parser": "^1.2.2"
+  }
+}
